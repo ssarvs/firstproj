@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: lb-svc1
+  labels:
+    type: frontend_uat
+spec:
+  type: LoadBalancer
+  selector:
+    type: frontend_uat
+  ports:
+    - port: 80

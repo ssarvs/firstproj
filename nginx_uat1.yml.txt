@@ -1,0 +1,19 @@
+kind: Deployment
+metadata:
+  labels:
+    type: frontend_uat 
+  name: nginxdemo1uat
+  namespace: uat 
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      type: frontend_uat
+  template:
+    metadata:
+      labels:
+       type: frontend_uat
+    spec:
+      containers:
+      - image: nginxdemos/hello
+        name: hello

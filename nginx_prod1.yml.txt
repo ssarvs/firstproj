@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    type: frontend_prod 
+  name: nginxdemo1prod
+  namespace: prod 
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      type: frontend_prod
+  template:
+    metadata:
+      labels:
+       type: frontend_prod
+    spec:
+      containers:
+      - image: nginxdemos/hello
+        name: hello
